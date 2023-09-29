@@ -88,6 +88,8 @@ body.fy-results-page ytd-horizontal-card-list-renderer,
 body.fy-results-page ytd-channel-renderer,
 body.fy-results-page ytd-mini-guide-renderer,
 body.fy-results-page yt-showing-results-for-renderer,
+body.fy-results-page ytd-reel-shelf-renderer.style-scope.ytd-item-section-renderer, /* Remove unrelated short reel */
+body.fy-results-page ytd-shelf-renderer, /* Remove unrelated video */
 body.fy-results-page #secondary.style-scope.ytd-two-column-search-results-renderer {
   display: none !important;
 }
