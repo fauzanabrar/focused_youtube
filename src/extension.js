@@ -88,7 +88,9 @@ const initHomePage = () => {
 
       <div class="fy-home-page__body">
         <form class="fy-home-page__form fy-search-form" action="#">
-          <input class="fy-search-form__text-input" type="text" placeholder="Search" />
+          <div id="search-input">
+            <input class="fy-search-form__text-input ytd-searchbox" type="text" placeholder="Search" />
+          </div>
           <button class="fy-search-form__submit"></button>
         </form>
       </div>
@@ -142,5 +144,26 @@ chrome.storage.onChanged.addListener((changes) => {
         $body.classList.remove("fy-watch-page--comments-visible")
       }
     }
+  }
+})
+
+
+// Define the selector for the input element
+const inputSelector = "#search-input > input"
+
+// Function to focus on the input element
+function focusOnInput() {
+  const inputElement = document.querySelector(inputSelector)
+
+  if (inputElement) {
+    inputElement.focus()
+  } 
+}
+
+// Event listener for Ctrl + Y key combination
+document.addEventListener("keydown", (event) => {
+  if (event.ctrlKey && event.key === "y") {
+    event.preventDefault() // Prevent the default browser behavior (like redo)
+    focusOnInput()
   }
 })
